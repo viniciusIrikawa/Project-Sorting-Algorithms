@@ -61,7 +61,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="20" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="tempo" min="-2" pref="66" max="-2" attributes="0"/>
                       <Component id="lblInput" min="-2" pref="267" max="-2" attributes="0"/>
                       <Component id="input" min="-2" pref="481" max="-2" attributes="0"/>
@@ -81,7 +81,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="lblResultado" min="-2" pref="66" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lblSaida" min="-2" pref="133" max="-2" attributes="0"/>
+                          <Component id="lblSaida" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
@@ -269,7 +269,7 @@
         <Component class="javax.swing.JLabel" name="lblSaida">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Piximisa" size="12" style="0"/>
+              <Font name="Piximisa" size="18" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="40" green="40" red="41" type="rgb"/>

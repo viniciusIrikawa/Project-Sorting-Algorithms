@@ -1,4 +1,5 @@
 
+import static Algorithms.Algoritmos.bubbleSort;
 import javax.swing.JOptionPane;
 import java.util.Arrays;
 public class GUI extends javax.swing.JFrame {
@@ -84,7 +85,7 @@ public class GUI extends javax.swing.JFrame {
         lblResultado.setForeground(new java.awt.Color(65, 64, 64));
         lblResultado.setText("resultado: ");
 
-        lblSaida.setFont(new java.awt.Font("Piximisa", 0, 12)); // NOI18N
+        lblSaida.setFont(new java.awt.Font("Piximisa", 0, 18)); // NOI18N
         lblSaida.setForeground(new java.awt.Color(65, 64, 64));
 
         btnLimpar.setBackground(new java.awt.Color(35, 35, 35));
@@ -129,7 +130,7 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLayout.createSequentialGroup()
                 .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(tempo, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblInput, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(input, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -146,7 +147,7 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(panelLayout.createSequentialGroup()
                         .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblSaida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(22, 22, 22))
         );
         panelLayout.setVerticalGroup(
@@ -196,6 +197,7 @@ public class GUI extends javax.swing.JFrame {
  
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
         input.setText(null);
+        lblSaida.setText(null);
         buttonGroup.clearSelection();
     }//GEN-LAST:event_btnLimparActionPerformed
 
@@ -208,6 +210,9 @@ public class GUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Selecione uma das opções.");
         }
         else{
+            if(bubbleSort.isSelected()){
+                lblSaida.setText(Arrays.toString(bubbleSort(pegarDados())));
+            }
         }
     }//GEN-LAST:event_btnOrdenarActionPerformed
 
