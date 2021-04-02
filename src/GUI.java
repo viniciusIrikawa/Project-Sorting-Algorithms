@@ -1,11 +1,12 @@
+
+import javax.swing.JOptionPane;
+import java.util.Arrays;
 public class GUI extends javax.swing.JFrame {
 
     
     public GUI() {
         initComponents();
     }
-    
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -192,16 +193,38 @@ public class GUI extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+ 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
         input.setText(null);
         buttonGroup.clearSelection();
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarActionPerformed
-       
+
+        if(input.getText().length() == 0){
+            JOptionPane.showMessageDialog(null, "Campo vazio, favor insira os dados");
+        }
+        else if(buttonGroup.getSelection() == null){
+            JOptionPane.showMessageDialog(null, "Selecione uma das opções.");
+        }
+        else{
+        }
     }//GEN-LAST:event_btnOrdenarActionPerformed
 
+    public int[] pegarDados(){
+        String dados = input.getText(); //Pega os dados do input
+        String[] vetor = dados.split(","); //Armazena os dados em um vetor de String
+        
+        int[] num = new int[vetor.length]; //Armazena e transforma os dados em inteiro
+        for (int i = 0; i < vetor.length; i++) {
+            num[i] = Integer.parseInt(vetor[i]);
+        }
+            
+        return num;
+    }
+    
+    
+    
     /**
      * @param args the command line arguments
      */
