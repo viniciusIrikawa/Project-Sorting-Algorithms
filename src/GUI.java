@@ -1,5 +1,6 @@
 
 import static Algorithms.Algoritmos.bubbleSort;
+import static Algorithms.Algoritmos.insertionSort;
 import javax.swing.JOptionPane;
 import java.util.Arrays;
 public class GUI extends javax.swing.JFrame {
@@ -212,6 +213,9 @@ public class GUI extends javax.swing.JFrame {
         else{
             if(bubbleSort.isSelected()){
                 lblSaida.setText(Arrays.toString(bubbleSort(pegarDados())));
+            }
+            if(insertionSort.isSelected()){
+                lblSaida.setText(Arrays.toString(insertionSort(pegarDados())));
             }
         }
     }//GEN-LAST:event_btnOrdenarActionPerformed

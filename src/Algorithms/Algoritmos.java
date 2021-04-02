@@ -16,9 +16,21 @@ public class Algoritmos {
         }
         return vetor;
     }
-    public static int insertionSort(int[] vetor){
-        return 0;
+    public static int[] insertionSort(int[] vetor){
+        for(int i = 1; i < vetor.length; i++){  //Percorre o array a partir do índice 1
+            int atual = vetor[i];  //"atual" será o número posicionado no índice vigente 
+            int j = i - 1;     //"j" representará o número anterior ao número atual
+            
+            while(( j > -1 ) && ( vetor[j] > atual)){  //Verifica se o número anterior é maior que o atual
+                 vetor[j + 1] = vetor[j];  //Troca a posição dos números
+                 j--;    //Decrementa o vetor
+            }
+            vetor[j + 1] = atual;  //Atualiza o número atual  
+        }
+        return vetor;
     }
+    
+    
     public static int selectionSort(int[] vetor){
         return 0;
     }
