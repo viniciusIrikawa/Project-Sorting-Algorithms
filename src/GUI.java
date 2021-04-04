@@ -1,5 +1,6 @@
 
 import static Algorithms.Algoritmos.bubbleSort;
+import static Algorithms.Algoritmos.countingSort;
 import static Algorithms.Algoritmos.insertionSort;
 import javax.swing.JOptionPane;
 import java.util.Arrays;
@@ -231,6 +232,13 @@ public class GUI extends javax.swing.JFrame {
             if(insertionSort.isSelected()){
                 long tempoInicial = System.nanoTime();
                 lblSaida.setText(Arrays.toString(insertionSort(pegarDados())));
+                long tempoFinal = System.nanoTime();
+                long tempoTotal = (tempoFinal - tempoInicial);
+                saidaNs.setText(String.valueOf(tempoTotal) + " ns");
+            }
+            if(countingSort.isSelected()){
+                long tempoInicial = System.nanoTime();
+                lblSaida.setText(Arrays.toString(countingSort(pegarDados())));
                 long tempoFinal = System.nanoTime();
                 long tempoTotal = (tempoFinal - tempoInicial);
                 saidaNs.setText(String.valueOf(tempoTotal) + " ns");

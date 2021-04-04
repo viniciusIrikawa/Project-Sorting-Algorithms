@@ -34,7 +34,42 @@ public class Algoritmos {
     public static int selectionSort(int[] vetor){
         return 0;
     }
-    public static int countingSort(int[] vetor){
-        return 0;
+    public static int[] countingSort(int[] original){
+        
+        //Veririca o maior valor do vetor
+        int maior = 0;
+        for (int i = 0; i < original.length; i++) {
+            if (original[i] > maior) {
+                maior = original[i];
+            }
+        }
+
+        //Vetor para verificar recorrencias 
+        int contador[] = new int[maior];
+
+        //Vetor Final
+        int ordenado[] = new int[original.length];
+        int x = 0;
+
+        //Conta as repetições 
+        for (int i = 0; i < original.length; i++) {
+
+            int posicao = original[i];
+            contador[posicao - 1] = contador[posicao - 1] + 1;
+        }
+
+        //Monta o array ordenado
+        for (int i = 0; i < contador.length; i++) {
+
+            int quantidade = contador[i];
+
+            //Para casos de números repetidos
+            while (quantidade > 0) {
+                ordenado[x] = i + 1;
+                x++;
+                quantidade--;
+            }
+        }
+        return ordenado;
     }
 }
