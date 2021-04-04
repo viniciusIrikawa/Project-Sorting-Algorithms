@@ -31,9 +31,22 @@ public class Algoritmos {
     }
     
     
-    public static int selectionSort(int[] vetor){
-        return 0;
+    public static int[] selectionSort(int[] vetor){
+        for (int i = 0; i < vetor.length; i++) {
+            int indexDoValorMenor = i;
+            for (int j = i+1; j < vetor.length; j ++){
+                if (vetor[indexDoValorMenor] > vetor [j]) {
+                    indexDoValorMenor = j;
+                }
+            }
+        
+            int valorMenor = vetor[indexDoValorMenor];
+            vetor[indexDoValorMenor] = vetor[i];
+            vetor[i] = valorMenor;
+        }
+        return vetor;
     }
+        
     public static int[] countingSort(int[] original){
         
         //Veririca o maior valor do vetor

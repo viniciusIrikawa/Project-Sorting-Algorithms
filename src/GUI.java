@@ -2,6 +2,7 @@
 import static Algorithms.Algoritmos.bubbleSort;
 import static Algorithms.Algoritmos.countingSort;
 import static Algorithms.Algoritmos.insertionSort;
+import static Algorithms.Algoritmos.selectionSort;
 import javax.swing.JOptionPane;
 import java.util.Arrays;
 public class GUI extends javax.swing.JFrame {
@@ -239,6 +240,13 @@ public class GUI extends javax.swing.JFrame {
             if(countingSort.isSelected()){
                 long tempoInicial = System.nanoTime();
                 lblSaida.setText(Arrays.toString(countingSort(pegarDados())));
+                long tempoFinal = System.nanoTime();
+                long tempoTotal = (tempoFinal - tempoInicial);
+                saidaNs.setText(String.valueOf(tempoTotal) + " ns");
+            }
+            if(selectionSort.isSelected()){
+                long tempoInicial = System.nanoTime();
+                lblSaida.setText(Arrays.toString(selectionSort(pegarDados())));
                 long tempoFinal = System.nanoTime();
                 long tempoTotal = (tempoFinal - tempoInicial);
                 saidaNs.setText(String.valueOf(tempoTotal) + " ns");
